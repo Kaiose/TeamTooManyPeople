@@ -136,7 +136,7 @@ namespace Gamekit2D
 
             meleeDamager.DisableDamage();
 
-            m_ShotSpawnGap = 0.1f / shotsPerSecond;
+            m_ShotSpawnGap = 1f / shotsPerSecond;
             m_NextShotTime = Time.time;
             m_ShotSpawnWait = new WaitForSeconds(m_ShotSpawnGap);
 

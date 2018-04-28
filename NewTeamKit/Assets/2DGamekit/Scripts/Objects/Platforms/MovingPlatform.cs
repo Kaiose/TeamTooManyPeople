@@ -12,8 +12,7 @@ namespace Gamekit2D
         {
             BACK_FORTH,
             LOOP,
-            ONCE,
-            RESET
+            ONCE
         }
 
         public PlatformCatcher platformCatcher;
@@ -157,10 +156,6 @@ namespace Gamekit2D
                                     m_Next -= 1;
                                     StopMoving();
                                     break;
-                                case MovingPlatformType.RESET:
-                                    m_Next -= 1;
-                                    ResetPlatform();
-                                    break;
                             }
                         }
                     }
@@ -173,19 +168,15 @@ namespace Gamekit2D
                             switch (platformType)
                             {
                                 case MovingPlatformType.BACK_FORTH:
-                                    m_Next += 1;
+                                    m_Next = 1;
                                     m_Dir = 1;
                                     break;
                                 case MovingPlatformType.LOOP:
-                                    m_Next += m_WorldNode.Length - 1;
+                                    m_Next = m_WorldNode.Length - 1;
                                     break;
                                 case MovingPlatformType.ONCE:
                                     m_Next += 1;
                                     StopMoving();
-                                    break;
-                                case MovingPlatformType.RESET:
-                                    m_Next += 1;
-                                    ResetPlatform();
                                     break;
                             }
                         }
