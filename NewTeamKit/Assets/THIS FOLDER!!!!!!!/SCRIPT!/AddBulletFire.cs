@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFire : MonoBehaviour
+public class AddBulletFire : MonoBehaviour
 {
-    public GameObject PlayerMissile;    // 복제할 미사일 오브젝트
-    public Transform MissileLocation;   // 미사일이 발사될 위치
+    
+    public GameObject AddMissile;    // 복제할 미사일 오브젝트
+    public Transform AddMissileLocation;   // 미사일이 발사될 위치
     public float FireDelay;             // 미사일 발사 속도(미사일이 날라가는 속도x)
-    private bool FireState;             // 미사일 발사 속도를 제어할 변수
+    protected bool FireState;           // 미사일 발사 속도를 제어할 변수
 
     public int MissileMaxPool;          // 메모리 풀에 저장할 미사일 개수
     private MemoryPool MPool;           // 메모리 풀
     private GameObject[] MissileArray;  // 메모리 풀과 연동하여 사용할 미사일 배열
-    
-    
+
+
     // 게임이 종료되면 자동으로 호출되는 함수
     private void OnApplicationQuit()
     {
@@ -29,7 +30,7 @@ public class PlayerFire : MonoBehaviour
         // 메모리 풀을 초기화합니다.
         MPool = new MemoryPool();
         // PlayerMissile을 MissileMaxPool만큼 생성합니다.
-        MPool.Create(PlayerMissile, MissileMaxPool);
+        MPool.Create(AddMissile, MissileMaxPool);
         // 배열도 초기화 합니다.(이때 모든 값은 null이 됩니다.)
         MissileArray = new GameObject[MissileMaxPool];
     }
@@ -58,12 +59,12 @@ public class PlayerFire : MonoBehaviour
                     // 메모리풀에서 미사일을 가져온다.
                     MissileArray[i] = MPool.NewItem();
                     // 해당 미사일의 위치를 미사일 발사지점으로 맞춘다.
-                    MissileArray[i].transform.position = MissileLocation.transform.position;
+                    MissileArray[i].transform.position = AddMissileLocation.transform.position;
                     // 발사 후에 for문을 바로 빠져나간다.
                     break;
                 }
             }
-            
+
         }
 
         // 미사일이 발사될때마다 미사일을 메모리풀로 돌려보내는 것을 체크한다.
