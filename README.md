@@ -1,7 +1,6 @@
 # 환기
 실행파일 다운로드!
-
-https://drive.google.com/open?id=1BwASVBix_0p9-rZ3VSr-1el2eZzDMgID
+https://drive.google.com/open?id=1NOLshJS3z2HmWjAiU780ZnZtGhTwCjcO
 
 -> 이거 클릭
 
