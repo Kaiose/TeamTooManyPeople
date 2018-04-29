@@ -46,24 +46,26 @@ public class PlayerFire : MonoBehaviour
         // 제어변수가 true일때만 발동
         if (FireState)
         {
-            // 코루틴 "FireCycleControl"이 실행되며
-            StartCoroutine(FireCycleControl());
+            if (Input.GetKey(KeyCode.Space))
+            {   
+                // 코루틴 "FireCycleControl"이 실행되며
+                StartCoroutine(FireCycleControl());
 
-            // 미사일 풀에서 발사되지 않은 미사일을 찾아서 발사합니다.
-            for (int i = 0; i < MissileMaxPool; i++)
-            {
-                // 만약 미사일배열[i]가 비어있다면
-                if (MissileArray[i] == null)
+                // 미사일 풀에서 발사되지 않은 미사일을 찾아서 발사합니다.
+                for (int i = 0; i < MissileMaxPool; i++)
                 {
-                    // 메모리풀에서 미사일을 가져온다.
-                    MissileArray[i] = MPool.NewItem();
-                    // 해당 미사일의 위치를 미사일 발사지점으로 맞춘다.
-                    MissileArray[i].transform.position = MissileLocation.transform.position;
-                    // 발사 후에 for문을 바로 빠져나간다.
-                    break;
+                    // 만약 미사일배열[i]가 비어있다면
+                    if (MissileArray[i] == null)
+                    {
+                        // 메모리풀에서 미사일을 가져온다.
+                        MissileArray[i] = MPool.NewItem();
+                        // 해당 미사일의 위치를 미사일 발사지점으로 맞춘다.
+                        MissileArray[i].transform.position = MissileLocation.transform.position;
+                        // 발사 후에 for문을 바로 빠져나간다.
+                        break;
+                    }
                 }
             }
-            
         }
 
         // 미사일이 발사될때마다 미사일을 메모리풀로 돌려보내는 것을 체크한다.

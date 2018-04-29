@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 20
-  DestroyXPos: 110
+  DestroyXPos: 150
 --- !u!212 &212459723609078188
 SpriteRenderer:
   m_ObjectHideFlags: 1
