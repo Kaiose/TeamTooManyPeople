@@ -9,6 +9,7 @@ public class EnemyInfo : MonoBehaviour {
 
     public GameObject explosionPrefab;
 
+    
 
     // Use this for initialization
     void Start()

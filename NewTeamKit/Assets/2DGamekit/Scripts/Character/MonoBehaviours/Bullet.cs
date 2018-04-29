@@ -12,7 +12,7 @@ namespace Gamekit2D
 
         [Tooltip("If -1 never auto destroy, otherwise bullet is return to pool when that time is reached")]
         public float timeBeforeAutodestruct = -1.0f;
-    
+
         [HideInInspector]
         public BulletObject bulletPoolObject;
         [HideInInspector]
@@ -31,12 +31,13 @@ namespace Gamekit2D
             m_Timer = 0.0f;
         }
 
-        public void ReturnToPool ()
+        public void ReturnToPool()
         {
-            bulletPoolObject.ReturnToPool ();
+            bulletPoolObject.ReturnToPool();
         }
 
-        void FixedUpdate ()
+
+        void FixedUpdate()
         {
             if (destroyWhenOutOfView)
             {
@@ -56,6 +57,21 @@ namespace Gamekit2D
                     bulletPoolObject.ReturnToPool();
                 }
             }
+
+            /*
+			Player.transform.Translate(new Vector3(0.1f, 0, 0));
+			//상하 이동시 총알 보정
+			if (Input.GetKey(KeyCode.W))
+				transform.Translate(new Vector2(0, -0.16f));
+			if (Input.GetKey(KeyCode.S))
+				transform.Translate(new Vector2(0, 0.16f));
+			
+			//좌우 이동시 총알 보정
+			if (Input.GetKey(KeyCode.D))
+				transform.Translate(new Vector2(-0.16f, 0));
+			if (Input.GetKey(KeyCode.A))
+				transform.Translate(new Vector2(0.16f, 0));
+			*/
         }
 
         public void OnHitDamageable(Damager origin, Damageable damageable)

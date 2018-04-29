@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/THIS FOLDER!!!!!!!/new.unity
     guid: 09f087ed95c7b024b96f2d6fee19144d
+  - enabled: 0
+    path: Assets/New2.unity
+    guid: a05450d77f0319a4580445dd912440dc

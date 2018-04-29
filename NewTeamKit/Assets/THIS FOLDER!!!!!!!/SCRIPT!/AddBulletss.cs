@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Gamekit2D;
 
-public class AddBulletFire : MonoBehaviour
+public class AddBulletss : MonoBehaviour
 {
-    
+
     public GameObject AddMissile;    // 복제할 미사일 오브젝트
     public Transform AddMissileLocation;   // 미사일이 발사될 위치
     public float FireDelay;             // 미사일 발사 속도(미사일이 날라가는 속도x)
@@ -23,7 +23,7 @@ public class AddBulletFire : MonoBehaviour
         MPool.Dispose();
     }
 
-    public void ControlFireState()
+    public void ControlFire()
     {
         FireState = true;
     }

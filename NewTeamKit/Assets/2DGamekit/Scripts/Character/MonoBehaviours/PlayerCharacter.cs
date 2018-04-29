@@ -29,15 +29,19 @@ namespace Gamekit2D
         public float maxSpeed = 10f;
         public float groundAcceleration = 100f;
         public float groundDeceleration = 100f;
-        [Range(0f, 1f)] public float pushingSpeedProportion;
+        [Range(0f, 1f)]
+        public float pushingSpeedProportion;
 
-        [Range(0f, 1f)] public float airborneAccelProportion;
-        [Range(0f, 1f)] public float airborneDecelProportion;
+        [Range(0f, 1f)]
+        public float airborneAccelProportion;
+        [Range(0f, 1f)]
+        public float airborneDecelProportion;
         public float gravity = 50f;
         public float jumpSpeed = 20f;
         public float jumpAbortSpeedReduction = 100f;
 
-        [Range(k_MinHurtJumpAngle, k_MaxHurtJumpAngle)] public float hurtJumpAngle = 45f;
+        [Range(k_MinHurtJumpAngle, k_MaxHurtJumpAngle)]
+        public float hurtJumpAngle = 45f;
         public float hurtJumpSpeed = 5f;
         public float flickeringDuration = 0.1f;
 
@@ -126,6 +130,8 @@ namespace Gamekit2D
             m_InventoryController = GetComponent<InventoryController>();
 
             m_CurrentBulletSpawnPoint = spriteOriginallyFacesLeft ? facingLeftBulletSpawnPoint : facingRightBulletSpawnPoint;
+
+
         }
 
         void Start()
@@ -179,6 +185,7 @@ namespace Gamekit2D
 
         void Update()
         {
+
             if (PlayerInput.Instance.Pause.Down)
             {
                 if (!m_InPause)
@@ -197,10 +204,11 @@ namespace Gamekit2D
                     Unpause();
                 }
             }
+
         }
 
         void FixedUpdate()
-        { 
+        {
             m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
             m_Animator.SetFloat(m_HashHorizontalSpeedPara, m_MoveVector.x);
             m_Animator.SetFloat(m_HashVerticalSpeedPara, m_MoveVector.y);
@@ -311,6 +319,7 @@ namespace Gamekit2D
             }
         }
 
+
         protected void SpawnBullet()
         {
             //we check if there is a wall between the player and the bullet spawn position, if there is, we don't spawn a bullet
@@ -328,9 +337,13 @@ namespace Gamekit2D
             BulletObject bullet = bulletPool.Pop(m_CurrentBulletSpawnPoint.position);
             bool facingLeft = m_CurrentBulletSpawnPoint == facingLeftBulletSpawnPoint;
             bullet.rigidbody2D.velocity = new Vector2(facingLeft ? -bulletSpeed : bulletSpeed, 0f);
+
             bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
 
             rangedAttackAudioPlayer.PlayRandomSound();
+
+            //탄환의 부모를 제거 - 플레이어가 움직여도 탄환은 안움직임
+            bullet.transform.parent = null;
         }
 
         // Public functions - called mostly by StateMachineBehaviours in the character's Animator Controller but also by Events.
@@ -351,27 +364,27 @@ namespace Gamekit2D
 
         public void IncrementMovement(Vector2 additionalMovement)
         {
-            m_MoveVector += additionalMovement;
+            //m_MoveVector += additionalMovement;
         }
 
         public void IncrementHorizontalMovement(float additionalHorizontalMovement)
         {
-            m_MoveVector.x += additionalHorizontalMovement;
+            // m_MoveVector.x += additionalHorizontalMovement;
         }
 
         public void IncrementVerticalMovement(float additionalVerticalMovement)
         {
-            m_MoveVector.y += additionalVerticalMovement;
+            // m_MoveVector.y += additionalVerticalMovement;
         }
 
         public void GroundedVerticalMovement()
         {
-            m_MoveVector.y -= gravity * Time.deltaTime;
+            /* m_MoveVector.y -= gravity * Time.deltaTime;
 
-            if (m_MoveVector.y < -gravity * Time.deltaTime * k_GroundedStickingVelocityMultiplier)
-            {
-                m_MoveVector.y = -gravity * Time.deltaTime * k_GroundedStickingVelocityMultiplier;
-            }
+             if (m_MoveVector.y < -gravity * Time.deltaTime * k_GroundedStickingVelocityMultiplier)
+             {
+                 m_MoveVector.y = -gravity * Time.deltaTime * k_GroundedStickingVelocityMultiplier;
+             }*/
         }
 
         public Vector2 GetMoveVector()
@@ -391,8 +404,8 @@ namespace Gamekit2D
 
             if (faceLeft)
             {
-                spriteRenderer.flipX = !spriteOriginallyFacesLeft;
-                m_CurrentBulletSpawnPoint = facingLeftBulletSpawnPoint;
+                /* spriteRenderer.flipX = !spriteOriginallyFacesLeft;
+                 m_CurrentBulletSpawnPoint = facingLeftBulletSpawnPoint;*/
             }
             else if (faceRight)
             {
@@ -503,7 +516,7 @@ namespace Gamekit2D
                 }
             }
 
-            if(previousPushable != null && m_CurrentPushable != previousPushable)
+            if (previousPushable != null && m_CurrentPushable != previousPushable)
             {//we changed pushable (or don't have one anymore), stop the old one sound
                 previousPushable.EndPushing();
             }
@@ -526,21 +539,21 @@ namespace Gamekit2D
 
         public void StopPushing()
         {
-            if(m_CurrentPushable)
+            if (m_CurrentPushable)
                 m_CurrentPushable.EndPushing();
         }
 
         public void UpdateJump()
         {
-            if (!PlayerInput.Instance.Jump.Held && m_MoveVector.y > 0.0f)
-            {
-                m_MoveVector.y -= jumpAbortSpeedReduction * Time.deltaTime;
-            }
+            /* if (!PlayerInput.Instance.Jump.Held && m_MoveVector.y > 0.0f)
+             {
+                 m_MoveVector.y -= jumpAbortSpeedReduction * Time.deltaTime;
+             }*/
         }
 
         public void AirborneHorizontalMovement()
         {
-            float desiredSpeed = PlayerInput.Instance.Horizontal.Value * maxSpeed;
+            /*float desiredSpeed = PlayerInput.Instance.Horizontal.Value * maxSpeed;
 
             float acceleration;
 
@@ -549,16 +562,16 @@ namespace Gamekit2D
             else
                 acceleration = groundDeceleration * airborneDecelProportion;
 
-            m_MoveVector.x = Mathf.MoveTowards(m_MoveVector.x, desiredSpeed, acceleration * Time.deltaTime);
+            m_MoveVector.x = Mathf.MoveTowards(m_MoveVector.x, desiredSpeed, acceleration * Time.deltaTime);*/
         }
 
         public void AirborneVerticalMovement()
         {
-            if (Mathf.Approximately(m_MoveVector.y, 0f) || m_CharacterController2D.IsCeilinged && m_MoveVector.y > 0f)
-            {
-                m_MoveVector.y = 0f;
-            }
-            m_MoveVector.y -= gravity * Time.deltaTime;
+            /* if (Mathf.Approximately(m_MoveVector.y, 0f) || m_CharacterController2D.IsCeilinged && m_MoveVector.y > 0f)
+             {
+                 m_MoveVector.y = 0f;
+             }
+             m_MoveVector.y -= gravity * Time.deltaTime;*/
         }
 
         public bool CheckForJumpInput()
@@ -575,16 +588,16 @@ namespace Gamekit2D
         {
             int colliderCount = 0;
             int fallthroughColliderCount = 0;
-        
+
             for (int i = 0; i < m_CharacterController2D.GroundColliders.Length; i++)
             {
                 Collider2D col = m_CharacterController2D.GroundColliders[i];
-                if(col == null)
+                if (col == null)
                     continue;
 
                 colliderCount++;
 
-                if (PhysicsHelper.ColliderHasPlatformEffector (col))
+                if (PhysicsHelper.ColliderHasPlatformEffector(col))
                     fallthroughColliderCount++;
             }
 
@@ -597,7 +610,7 @@ namespace Gamekit2D
                         continue;
 
                     PlatformEffector2D effector;
-                    PhysicsHelper.TryGetPlatformEffector (col, out effector);
+                    PhysicsHelper.TryGetPlatformEffector(col, out effector);
                     FallthroughReseter reseter = effector.gameObject.AddComponent<FallthroughReseter>();
                     reseter.StartFall(effector);
                     //set invincible for half a second when falling through a platform, as it will make the player "standup"
@@ -692,14 +705,14 @@ namespace Gamekit2D
             m_Animator.SetTrigger(m_HashHurtPara);
 
             //we only force respawn if helath > 0, otherwise both forceRespawn & Death trigger are set in the animator, messing with each other.
-            if(damageable.CurrentHealth > 0 && damager.forceRespawn)
+            if (damageable.CurrentHealth > 0 && damager.forceRespawn)
                 m_Animator.SetTrigger(m_HashForcedRespawnPara);
 
             m_Animator.SetBool(m_HashGroundedPara, false);
             hurtAudioPlayer.PlayRandomSound();
 
             //if the health is < 0, mean die callback will take care of respawn
-            if(damager.forceRespawn && damageable.CurrentHealth > 0)
+            if (damager.forceRespawn && damageable.CurrentHealth > 0)
             {
                 StartCoroutine(DieRespawnCoroutine(false, true));
             }
@@ -717,8 +730,8 @@ namespace Gamekit2D
             PlayerInput.Instance.ReleaseControl(true);
             yield return new WaitForSeconds(1.0f); //wait one second before respawing
             yield return StartCoroutine(ScreenFader.FadeSceneOut(useCheckPoint ? ScreenFader.FadeType.Black : ScreenFader.FadeType.GameOver));
-            if(!useCheckPoint)
-                yield return new WaitForSeconds (2f);
+            if (!useCheckPoint)
+                yield return new WaitForSeconds(2f);
             Respawn(resetHealth, useCheckPoint);
             yield return new WaitForEndOfFrame();
             yield return StartCoroutine(ScreenFader.FadeSceneIn());
