@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gamekit2D;
 
 public class LookAtPlayer : MonoBehaviour {
 
@@ -9,7 +10,10 @@ public class LookAtPlayer : MonoBehaviour {
     float distance = 5.0f;
     Transform myTransform;
 
+    EnemyBehaviour eb;
     
+
+
     void Awake()
     {
         myTransform = transform;
@@ -24,10 +28,9 @@ public class LookAtPlayer : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(target.position, transform.position) <= distance)
+        if (Vector2.Distance(target.position, transform.position) <= distance)
         {
-            myTransform.position = Vector3.MoveTowards(transform.position, target.position, 5.0f * Time.deltaTime);
-            transform.LookAt(target);
+            eb.SetMoveVector(Vector2.up);
         }
     }
 }

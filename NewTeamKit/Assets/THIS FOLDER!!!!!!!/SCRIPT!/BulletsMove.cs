@@ -29,7 +29,7 @@ public class BulletsMove : MonoBehaviour {
     {
         // 매 프레임마다 미사일이 MoveSpeed 만큼 right방향(x축 +방향)으로 날라갑니다.
         transform.Translate(Vector2.right * MoveSpeed * Time.deltaTime);
-        // 만약에 미사일의 위치가 DestroyYPos를 넘어서면
+        // 만약에 미사일의 위치가 DestroyXPos를 넘어서면
         if (transform.position.x >= DestroyXPos)
         {
             // 미사일을 제거
