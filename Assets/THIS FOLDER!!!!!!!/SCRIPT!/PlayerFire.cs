@@ -12,7 +12,8 @@ public class PlayerFire : MonoBehaviour
     public int MissileMaxPool;          // 메모리 풀에 저장할 미사일 개수
     private MemoryPool MPool;           // 메모리 풀
     private GameObject[] MissileArray;  // 메모리 풀과 연동하여 사용할 미사일 배열
-
+    
+    
     // 게임이 종료되면 자동으로 호출되는 함수
     private void OnApplicationQuit()
     {
@@ -45,9 +46,8 @@ public class PlayerFire : MonoBehaviour
         // 제어변수가 true일때만 발동
         if (FireState)
         {
-            // 키보드의 "SPACE"를 누르면
             if (Input.GetKey(KeyCode.Space))
-            {
+            {   
                 // 코루틴 "FireCycleControl"이 실행되며
                 StartCoroutine(FireCycleControl());
 

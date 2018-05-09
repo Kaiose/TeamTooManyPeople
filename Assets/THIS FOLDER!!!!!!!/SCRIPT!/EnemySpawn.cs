@@ -9,9 +9,9 @@ public class EnemySpawn : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-    float spawnDistance = 5.0f;
+    float spawnDistance = 0.01f;
 
-    float enemyRate = 0.2f;
+    public float enemyRate = 0.2f;
     float nextEnemy = 1;
 
     // Update is called once per frame

@@ -30,11 +30,9 @@ EditorBuildSettings:
     path: Assets/2DGamekit/Scenes/UI/Loading.unity
     guid: ebc4647ff02971c4ba1b207af066be4d
   - enabled: 1
-    path: 
-    guid: 163d05f3291bbd347b28f8b9dd9383bc
+    path: Assets/PLAY.unity
+    guid: dbe34f73a030e1c4a879be153069a133
   - enabled: 1
-    path: 
-    guid: 87117bc79c07cd14e88d722cead407ff
-  - enabled: 1
-    path: Assets/THIS FOLDER!!!!!!!/new.unity
-    guid: 09f087ed95c7b024b96f2d6fee19144d
+    path: Assets/PLAY_.unity
+    guid: d3b58f5fa6a92854cbf5b962856269a3
+  m_configObjects: {}

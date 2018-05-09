@@ -33,7 +33,7 @@ namespace Gamekit2D
         {
             PersistentDataManager.UnregisterPersister(this);
         }
-
+      
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject != triggeringGameObject)

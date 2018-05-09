@@ -50,7 +50,7 @@ namespace Gamekit2D
         [Header("Range Attack Data")]
         [Tooltip("From where the projectile are spawned")]
         public Transform shootingOrigin;
-        public float shootAngle = 45.0f;
+        public float shootAngle = 0.0f;
         public float shootForce = 100.0f;
         public float fireRate = 2.0f;
 
@@ -447,7 +447,7 @@ namespace Gamekit2D
                     break;
             }
 
-            velocity = toTarget / T - Physics.gravity * T / 2f;
+            velocity = toTarget;
 
             return velocity;
         }
