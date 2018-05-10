@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212058539353349730}
   - component: {fileID: 61138398683113504}
   - component: {fileID: 114793837149260334}
+  - component: {fileID: 95051347151417844}
   m_Layer: 31
   m_Name: Spikes
   m_TagString: Untagged
@@ -35,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065201289290768}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1540006, y: 1.201445, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.004960921, w: 0.9999878}
+  m_LocalPosition: {x: 55.51767, y: 0.8266486, z: 0}
+  m_LocalScale: {x: -0.7608215, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.568}
 --- !u!61 &61138398683113504
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -51,10 +52,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0009866953, y: -0.15791273}
+  m_Offset: {x: -0.028438061, y: -0.06465489}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -65,8 +66,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.229687, y: 0.3269742}
+  m_Size: {x: 0.58985597, y: 0.54764783}
   m_EdgeRadius: 0
+--- !u!95 &95051347151417844
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065201289290768}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f94460866b0d40a418a479083d181b9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114793837149260334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +132,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 1b7abd73b5fe8524abc0ceb94975dda2, type: 2}
   m_StaticBatchInfo:

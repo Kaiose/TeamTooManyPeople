@@ -6,10 +6,10 @@ using Gamekit2D;
 public class AddBulletss : MonoBehaviour
 {
 
-    public GameObject AddMissile;    // 복제할 미사일 오브젝트
+    public GameObject AddMissile;          // 복제할 미사일 오브젝트
     public Transform AddMissileLocation;   // 미사일이 발사될 위치
-    public float FireDelay;             // 미사일 발사 속도(미사일이 날라가는 속도x)
-    private bool FireState;           // 미사일 발사 속도를 제어할 변수
+    public float FireDelay;                // 미사일 발사 속도(미사일이 날라가는 속도x)
+    private bool FireState;                // 미사일 발사 속도를 제어할 변수
 
     public int MissileMaxPool;          // 메모리 풀에 저장할 미사일 개수
     private MemoryPool MPool;           // 메모리 풀
@@ -53,8 +53,6 @@ public class AddBulletss : MonoBehaviour
         // 제어변수가 true일때만 발동
         if (FireState)
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
                 // 코루틴 "FireCycleControl"이 실행되며
                 StartCoroutine(FireCycleControl());
 
@@ -71,8 +69,7 @@ public class AddBulletss : MonoBehaviour
                         // 발사 후에 for문을 바로 빠져나간다.
                         break;
                     }
-                }
-            }
+                 }
 
         }
 
