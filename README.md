@@ -15,3 +15,6 @@ https://drive.google.com/open?id=1_7kdUz26Ux6A0Y0yG9EDNQaKGKhgs90u
 
 5. 시간 다되면 구름 터짐
 -> Shooting_Move에 코드 
+
+6. 보스전 시작되면 시간 줄어드는거 없어짐 ( UI가 멈추도록 )
+
