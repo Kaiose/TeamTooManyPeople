@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class UseLightning : MonoBehaviour {
 
-    public GameObject go;
-	// Use this for initialization
-	void Start () {
-		
+
+    public GameObject[] child;
+    // Use this for initialization
+    void Start () {
+        child = GetComponentsInChildren<GameObject>();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +22,15 @@ public class UseLightning : MonoBehaviour {
     {
         if (Input.GetKeyDown("r"))
         {
-            go.SetActive(true);
+            foreach (GameObject temp in child)
+            {
+                if (temp.activeSelf == false)
+                {
+                    temp.SetActive(true);
+                    break;
+                }
+
+            }
         }
     }
 
