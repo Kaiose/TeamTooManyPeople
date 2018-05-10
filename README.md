@@ -1,25 +1,7 @@
-<<<<<<< HEAD
 # TeamTooManyPeople
-=======
->>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
-
-ì‹¤í–‰íŒŒì¼ ë‹¤ìš´ë¡œë“œ
-->
-18.05.10
-<<<<<<< HEAD
-=======
-
-https://drive.google.com/open?id=1oVQEFMDRurWbeb4oCWHAyvILl9vjs08f
->>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
 
 https://drive.google.com/open?id=1rS1tbrWaKPnjOd1TghYCfD5TCXMn8J3d
 
-<<<<<<< HEAD
-
-ÆĞÄ¡ ³ëÆ® #23
-=======
-íŒ¨ì¹˜ ë…¸íŠ¸ #22
->>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
 
 1. ì´ì œ í”Œë ˆì´ì–´ê°€ ìë™ìœ¼ë¡œ ë’¤ë¡œ ë°€ë ¤ë‚˜ì§€ ì•ŠìŒ.
 -> Shooting_Moveì—ì„œ ì½”ë“œ ì¶”ê°€
@@ -29,11 +11,7 @@ https://drive.google.com/open?id=1rS1tbrWaKPnjOd1TghYCfD5TCXMn8J3d
 
 3. ì¶”ê°€ íƒ„í™˜ì€ ì œê±°í–ˆìŒ. ì»¨ì…‰ì´ë‘ ë™ë–¨ì–´ì§
 
-<<<<<<< HEAD
-4. ¿©±âÀú±â Ã¼·Â¾ÆÀÌÅÛÀÌ¶û ½Ã°£ ¾ÆÀÌÅÛ Ãß°¡
-
-5. ½Ã°£ ´ÙµÇ¸é ±¸¸§ÀÌ »ç¶óÁö°í ÅÍÁö´Â ¸ğ¼Ç Ãß°¡
--> ÀÌ°Íµµ Shooting_Move¿¡ ÄÚµå Ãß°¡
-=======
 4. ì—¬ê¸°ì €ê¸° ì²´ë ¥ì•„ì´í…œì´ë‘ ì‹œê°„ ì•„ì´í…œ ì¶”ê°€
->>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
+
+5. ì‹œê°„ ë‹¤ë˜ë©´ êµ¬ë¦„ í„°ì§
+-> Shooting_Moveì— ì½”ë“œ 
