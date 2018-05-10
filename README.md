@@ -1,24 +1,39 @@
+<<<<<<< HEAD
 # TeamTooManyPeople
+=======
+>>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
 
-½ÇÇàÆÄÀÏ ´Ù¿î·Îµå
+ì‹¤í–‰íŒŒì¼ ë‹¤ìš´ë¡œë“œ
 ->
 18.05.10
+<<<<<<< HEAD
+=======
+
+https://drive.google.com/open?id=1oVQEFMDRurWbeb4oCWHAyvILl9vjs08f
+>>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
 
 https://drive.google.com/open?id=1rS1tbrWaKPnjOd1TghYCfD5TCXMn8J3d
 
+<<<<<<< HEAD
 
 ÆÐÄ¡ ³ëÆ® #23
+=======
+íŒ¨ì¹˜ ë…¸íŠ¸ #22
+>>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
 
-1. ÀÌÁ¦ ÇÃ·¹ÀÌ¾î°¡ ÀÚµ¿À¸·Î µÚ·Î ¹Ð·Á³ªÁö ¾ÊÀ½.
--> Shooting_Move¿¡¼­ ÄÚµå Ãß°¡
+1. ì´ì œ í”Œë ˆì´ì–´ê°€ ìžë™ìœ¼ë¡œ ë’¤ë¡œ ë°€ë ¤ë‚˜ì§€ ì•ŠìŒ.
+-> Shooting_Moveì—ì„œ ì½”ë“œ ì¶”ê°€
 
-2. Ã³À½ºÎÅÍ ¸ðµç ¿ÀºêÁ§Æ®µéÀÌ È°¼ºÈ­µÇÀÖÀ¸¸é Á» ±×·¯´Ï±î ºÐ±âÁ¡¸¶´Ù
-   SetActive() ¸¦ ½ÃÄÑÁÖ´Â °ÍµéÀ» Ãß°¡
+2. ì²˜ìŒë¶€í„° ëª¨ë“  ì˜¤ë¸Œì íŠ¸ë“¤ì´ í™œì„±í™”ë˜ìžˆìœ¼ë©´ ì¢€ ê·¸ëŸ¬ë‹ˆê¹Œ ë¶„ê¸°ì ë§ˆë‹¤
+   SetActive() ë¥¼ ì‹œì¼œì£¼ëŠ” ê²ƒë“¤ì„ ì¶”ê°€
 
-3. Ãß°¡ ÅºÈ¯Àº ±×³É ¾ÈÇÔ. ÄÁ¼ÁÀÌ¶ûµµ ¾È¸Â´Â°Å°°°í
-   ¸¸µé±âµµ ³Ê¹« ¾î·Á¿ò.. 
+3. ì¶”ê°€ íƒ„í™˜ì€ ì œê±°í–ˆìŒ. ì»¨ì…‰ì´ëž‘ ë™ë–¨ì–´ì§
 
+<<<<<<< HEAD
 4. ¿©±âÀú±â Ã¼·Â¾ÆÀÌÅÛÀÌ¶û ½Ã°£ ¾ÆÀÌÅÛ Ãß°¡
 
 5. ½Ã°£ ´ÙµÇ¸é ±¸¸§ÀÌ »ç¶óÁö°í ÅÍÁö´Â ¸ð¼Ç Ãß°¡
 -> ÀÌ°Íµµ Shooting_Move¿¡ ÄÚµå Ãß°¡
+=======
+4. ì—¬ê¸°ì €ê¸° ì²´ë ¥ì•„ì´í…œì´ëž‘ ì‹œê°„ ì•„ì´í…œ ì¶”ê°€
+>>>>>>> 9cef8b5e88f357fd927be78326571fe6df44f2d2
