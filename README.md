@@ -1,6 +1,6 @@
 # TeamTooManyPeople
 
-https://drive.google.com/open?id=1_7kdUz26Ux6A0Y0yG9EDNQaKGKhgs90u
+https://drive.google.com/open?id=1_bycEKWwzbFQkdvSuVLW-_eud7ACGr05
 
 
 1. 이제 플레이어가 자동으로 뒤로 밀려나지 않음.
